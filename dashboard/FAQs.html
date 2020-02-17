@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>M2N</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="material_design/material-components-web.min.css">
+		<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-blue.min.css" /> 
+		<link rel="stylesheet" href="css/font-awesome.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/boot-main.css">	
+		<script type="text/javascript" src="js/boot-main.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/wow.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+
+		<style type="text/css">
+			 /* Style the buttons that are used to open and close the accordion panel */
+			h1,h2, h3, h4 ,h5, h6, p, span, a, li {
+			 	font-family: 'Roboto', sans-serif;
+			 	font-weight: normal;
+			 }
+		</style>
+</head>
+<body style="background-color:#e8e9ec; ">
+	<div class="mdc-card col-lg-2 col-md-2" id="sidenavigation" style="background:white;height:100%;position:fixed;left:0;top:0;bottom:0;color: #3C4858;">
+<aside class="mdc-drawer mdc-drawer--modal">
+	 <div class="mdc-drawer__content">
+		<a href="dashboard.html" target="target_self">
+		<div class="col-lg-12 col-md-12"  class="side-logo">
+				<img src="images/luckylogo.png" style="width:100%;padding-top: 10px;">
+				<hr style="width: 100%;">
+				
+			</div>
+			</a>
+			
+		<nav class="mdc-list col-lg-12 col-md-12" style="padding: 0px;color:#272d37">
+		  <a class="mdc-list-item  col-lg-12 col-md-12"  href="dashboard.html" aria-current="page" style="text-decoration:none;border-radius: 5px;">
+			 <i class="material-icons mdc-list-item__graphic md-40" aria-hidden="true" style="color:black;margin-right: 15px;">dashboard</i>
+			 <h5 class="mdc-list-item__text" >Dashboard</h5>
+		  </a>
+		  <a class="mdc-list-item col-lg-12 col-md-12" href="support.html"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+			 <i class="fa fa-phone" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+			 <h5 class="mdc-list-item__text">Support</h5>
+		  </a>
+
+		  <!-- drop down menu on Settings -->
+
+		  <div  id="settings-open" style="cursor: pointer;">
+			 
+		  <a class="mdc-list-item col-lg-12 col-md-12"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+			 <i class="fa fa-cog" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+			 <h5 class="mdc-list-item__text">Setting</h5>
+			 <i class="fa fa-caret-down" aria-hidden="true" style="font-size: 22px;position: absolute;right:10px;"></i>
+		  </a>
+		  <div id="aside-navhide">
+			
+			<a class="mdc-list-item col-lg-12 col-md-12" href="support.html"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+			 <i class="fa fa-clipboard" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+			 <h5 class="mdc-list-item__text">&nbsp;&nbsp;&nbsp;Config Rules</h5>
+		  </a>
+		  <a class="mdc-list-item col-lg-12 col-md-12" href="support.html"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+			 <i class="fa fa-clipboard" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+			 <h5 class="mdc-list-item__text">&nbsp;&nbsp;&nbsp;Config Devices</h5>
+		  </a>
+		  </div>
+
+		  </div>
+
+
+<!-- drop down menu on Settings -->
+
+		  <a class="mdc-list-item col-lg-12 col-md-12" href="FAQs.html" style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+			 <i class="material-icons mdc-list-item__graphic md-40" aria-hidden="true" style="color:black;margin-right: 15px;">help</i>
+			 <h5 class="mdc-list-item__text">FAQs</h5>
+		  </a>
+			<a class="mdc-list-item col-lg-12 col-md-12" href="customer_login.html"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+			 <i class="fa fa-sign-out" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+			 <h5 class="mdc-list-item__text">Logout</h5>
+		  </a>
+		  <!-- <a class="mdc-list-item col-lg-12 col-md-12" href="#" style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+			 <i class="material-icons mdc-list-item__graphic md-40" aria-hidden="true"> settings</i>
+			 <h4 class="mdc-list-item__text">Settings</h4>
+		  </a> -->
+		</nav>
+	 </div>
+  </aside>
+  </div>	
+
+   <div class="col-lg-2 col-md-2"></div>
+ <div class="mdc-drawer-content main-content col-lg-10 col-md-10 col-sm-12 col-xs-12" style="padding-left:0px;"> 
+	
+	<header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-top-app-bar" id="nav-bar">
+		<div class="mdc-top-app-bar__row">
+
+
+				<section class="col-md-6 col-sm-6 col-xs-6 mdc-top-app-bar__section mdc-top-app-bar__section--align-start"  style="padding-top:0;">
+					<img src="images/luckylogo.png" id="logoat-response">
+		
+				</section>
+
+				<section class="col-md-6 col-sm-6 col-xs-6 mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+					<!-- <div  class="profile">
+						<button class="mdc-button mdc-ripple-surface sidenotifiction" style="border-radius: 5px;color:#272d37;padding:0px;"><i class="mdc-fab__icon material-icons">notifications_active</i></button>
+					</div> -->
+
+					<div class="profile" >
+						<button class="mdc-button mdc-ripple-surface right-menu" style="border-radius: 5px;color:#272d37;" id="hamburgar-menu"><i class="mdc-fab__icon material-icons">menu</i></button>
+														 
+					</div>
+							
+				</section>
+				
+
+		</div>
+		<!-- Notifications -->
+
+	<!-- <div class="row">
+			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="float:right;">
+				<aside class="mdc-drawer mdc-card sidenotification " style="display: none;">
+					<div class="mdc-drawer__content" >
+						<ul style="padding:5px;">
+							<nav class="mdc-list"  style="padding-top: 5px;padding-bottom: 0px;">
+								<li> <a class="mdc-list-item" href="#" target="target_self" aria-current="page"  style="text-decoration: none">
+									<h4 class="mdc-list-item__text text-changer">Alert</h4>
+									  
+									</a>
+									
+									</li>
+									
+									<li><a class="mdc-list-item" href="#" target="target_self" style="text-decoration: none">
+								 
+										<h4 class="mdc-list-item__text text-changer">Some Quotes</h4>
+								</a></li>
+					</nav>
+					</ul>
+  </div>
+</aside>
+				</section>
+		</div> -->
+
+
+
+
+
+<!-- 
+		 Notifications -->
+		<!-- onclick side menu -->
+		<div class="row">
+			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="float:right;padding: 0px;">
+				<aside class="mdc-drawer mdc-card sidemnu" style="	display: none;">
+					<div class="mdc-drawer__content" >
+						<ul style="padding:5px;">
+					 <li><a class="mdc-list-item" href="dashboard.html" target="target_self" style="text-decoration: none;">
+							
+							 <h5 class="mdc-list-item__text">Dashboard</h5>
+						</a></li>
+						<li><a class="mdc-list-item" href="report.html"  style="text-decoration: none;">
+							
+							 <h5 class="mdc-list-item__text">Report</h5>
+						</a></li>
+						<li><a class="mdc-list-item" href="support.html"  style="text-decoration: none;">
+							
+							 <h5 class="mdc-list-item__text">Support</h5>
+						</a></li>
+
+							<nav class="mdc-list"  style="padding-top: 5px;padding-bottom: 0px;">
+								<li> <a class="mdc-list-item" href="settings.html"  aria-current="page"  style="text-decoration: none">
+									<h5 class="mdc-list-item__text">Settings</h5>
+									  
+									</a>
+									<ul style="padding:0px;">
+										<center>
+										<li> <a class="mdc-list-item" href="settings.html"  aria-current="page"  style="text-decoration: none">
+									<h5 class="mdc-list-item__text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configure Rules</h5>
+									  
+									</a></li>
+									<li> <a class="mdc-list-item" href="settings.html"  aria-current="page"  style="text-decoration: none">
+									<h5 class="mdc-list-item__text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configure Devices</h5>
+									  
+									</a></li>
+										</center>
+									</ul>
+									
+									</li>
+						<li><a class="mdc-list-item" href="help.html"  style="text-decoration: none;">
+							
+							 <h5 class="mdc-list-item__text">Help</h5>
+						</a></li>
+									
+									<li><a class="mdc-list-item" href="customer_login.html" style="text-decoration: none;">
+								 
+										<h5 class="mdc-list-item__text">Logout</h5>
+								</a></li>
+					</nav>
+					</ul>
+  </div>
+</aside>
+				</section>
+		</div>
+
+	</header>
+
+
+
+	<div class="col-lg-12 col-md-12 co-sm-12 col-xs-12" style="margin-top:70px;">
+	<div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+	<div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mdc-card" >
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-card" style="background: #808080;color:white;font-size: 22px;padding: 10px 10px 10px 15px;">
+				<div>
+					Frequently Asked Questions
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-card" style="padding-left: 0;padding-right: 0;background: #eeeeee;">
+			<button class="accordion col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<h4>What is the Lucky&trade; Customer Bliss Platform (CBP)?   	<i class="fa fa-caret-down" style="float:right;font-size:20px;"></i>  </h4> 
+				
+				 </button>
+				<div class="panel mdc-card">
+  				<p>
+
+			LUCKY&trade;, is a new end-to-end platform that helps you to improve the quality of your customer interactions in order to rapidly grow your business. It combines the latest IOT and smart device technology with a mobile app and robust cloud server applications to present a very scalable, high availability Machine-to-Next&trade; platform that works for the smallest business as well as the largest global enterprise.
+
+
+	<p>		With LUCKY&trade;, you can quickly and easily deliver on the promise of immersive, personalised experiences by providing consistently relevant, high quality, multimedia communications and offers in order to increase value exactly at your customer’s point of interaction (POI). By using the multimedia content delivery platform that is an integral part of LUCKY&trade;. To interact and engage with every customer. Most importantly, our analytics engine uses world class mathematical models and machine learning algorithms to analyse your customer data, in order to identify patterns and provide valuable information and insights about your customers and their behaviour, so that you can quickly modify your strategy, maximize results and achieve your goals.</p>
+</p>
+				</div>
+				
+			</div>
+		</div>
+		<!-- block 2 -->
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-card" style="padding-left: 0;padding-right: 0;">
+				
+				<button class="accordion col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:white;">
+					<h4>Why should I use Lucky&trade; CBP? <i class="fa fa-caret-down" style="float:right;font-size:20px;"></i>  </h4>  </button>
+				
+				<div class="panel mdc-card">
+  				<p>
+
+We could give you 20 reasons but these two should be enough.</p>
+
+   <p>&nbsp;&nbsp;&nbsp;&nbsp;1.If your customers experience is better, they will buy more, and you will make more money.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;2.If you have more information about your customers behaviour, you can improve their experience.</p>
+
+<p> LUCKY&trade; will help you achieve both, and much more. Contact us today and we will show you how to Turn on the Magic!
+</p>
+				</div>
+				
+			</div>
+		</div>
+		<!-- block 3 -->
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-card" style="padding-left: 0;padding-right: 0;background: #eeeeee;">
+				
+				<button class="accordion col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4>	Do I need to be a tech whiz to use Lucky&trade; CBP?  <i class="fa fa-caret-down" style="float:right;font-size:20px;"></i>     </h4></button>
+			
+				<div class="panel mdc-card">
+  				<p>No. Like all great technological innovations, the LUCKY&trade; CBP is extremely intuitive and easy to use. Besides, we will handhold you through the initial period.</p>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-card" style="padding-left: 0;padding-right: 0;">
+				
+				<button class="accordion col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:white;"><h4>Will it take a lot of time and effort to deploy Lucky&trade; CBP? <i class="fa fa-caret-down" style="float:right;font-size:20px;"></i>   </h4></button>
+				
+				<div class="panel mdc-card">
+  				<p>No. We have the process well defined, so that its quick and painless for you.</p>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-card" style="padding-left: 0;padding-right: 0;background: #eeeeee;">
+				
+				<button class="accordion col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4>I am a small shop owner. This sounds exciting but can I afford it?   <i class="fa fa-caret-down" style="float:right;font-size:20px;"></i>    </h4> </button>
+				
+				<div class="panel mdc-card">
+  				<p>Simply, yes. Contact us for more information.</p>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-card" style="padding-left: 0;padding-right: 0;">
+				
+				<button class="accordion col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:white;">
+					<h4>What does Lucky&trade; CBP cost?   <i class="fa fa-caret-down" style="float:right;font-size:20px;"></i>     </h4> </button>
+				
+				<div class="panel mdc-card">
+  				<p>Less than the daily cup of coffee at your favourite neighbourhood coffee shop. Please contact us for an exact price quotation.</p>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-card "  style="padding-left: 0;padding-right: 0;background: #eeeeee;">
+				
+				<button class="accordion col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<h4>Great. So the solution works for small businesses, but we are a global brick and mortar retail enterprise. How can we benefit from it?  <i class="fa fa-caret-down" style="float:right;font-size:20px;"></i>    </h4> </button>
+				
+
+				<div class="panel mdc-card">
+  				<p>Actually, we designed and built LUCKY&trade; as a system for global, multi-location enterprises. Using the expertise we acquired while building and delivering the world's largest privately managed emergency service - a service that is inherently high availability and massively scalable - LUCKY&trade; uses smart devices, mobile technologies and cloud based servers to deliver a very unique and intelligent system, with features and pricing that are unmatched.</p>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-card" style="padding-left: 0;padding-right: 0;">
+				
+				<button class="accordion col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:white;"><h4>Is Lucky&trade; CBP available in my city? <i class="fa fa-caret-down" style="float:right;font-size:20px;"></i>     </h4> </button>
+				
+
+				<div class="panel mdc-card">
+  				<p>Please contact us for more information.</p>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-card" style="padding-left: 0;padding-right: 0;background: #eeeeee;">
+				
+				<button class="accordion col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4>What if I am less than happy after deploying Lucky&trade; CBP in my store? <i class="fa fa-caret-down" style="float:right;font-size:20px;"></i>    </h4> </button>
+				
+
+				<div class="panel mdc-card">
+  				<p>If we fail to deliver what we promised, we will refund your money.</p>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-card" style="padding-left: 0;padding-right: 0;">
+				
+				<button class="accordion col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:white;"><h4>Why is LUCKY&trade; modular? <i class="fa fa-caret-down" style="float:right;font-size:20px;"></i> </h4></button>
+			
+
+				<div class="panel mdc-card">
+  				<p>We divided it into modules, so that we can deliver even greater value to our customers, by not giving you what you don't need right now and making it possible for even the smallest businesses to Turn on the Magic!</p>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-card" style="padding-left: 0;padding-right: 0;background: #eeeeee;">
+				
+				<button class="accordion col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<h4>Can I see LUCKY&trade; in action before I make a decision to buy? <i class="fa fa-caret-down" style="float:right;font-size:20px;"></i> </h4></button>
+				
+
+				<div class="panel mdc-card">
+  				<p>Contact us today, for your free onsite, no obligation demo and discuss how LUCKY&trade; will help you, with one of our trained sales advisors.</p>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-card" style="padding-left: 0;padding-right: 0;">
+				
+				<button class="accordion col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:white;"><h4>How do I become a LUCKY&trade; business partner? <i class="fa fa-caret-down" style="float:right;font-size:20px;"></i> </h4>	</button>
+				
+
+
+				<div class="panel mdc-card">
+  				<p>Please tell us more about yourself and your business so that we can get in touch with you.</p>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-card" style="padding-left: 0;padding-right: 0;background: #eeeeee;">
+			
+				<button class="accordion col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<h4>Is a LUCKY&trade; business partnership opportunity available in my city? <i class="fa fa-caret-down" style="float:right;font-size:20px;"></i> </h4></button>
+				
+
+				<div class="panel mdc-card">
+  				<p>We are looking for distribution, sales, implementation and support partners in every major city across India.</p>
+				</div>
+				
+			</div>
+		</div>
+	 </div>
+	<div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+</div>
+
+<footer>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:100px;">
+		<div class="row">
+			<section class="col-md-12 col-sm-12 col-xs-12 text-center">
+						<a href="#" style="text-decoration: none;">
+						<button class="mdc-button mdc-ripple-surface" style="border-radius: 5px;color:#FFF;background:#007bb5;">
+							<i class="fa fa-linkedin" aria-hidden="true" style="font-size:20px;"></i>
+						</button>
+						</a>
+					
+
+						<a href="#" style="text-decoration: none;">
+						<button class="mdc-button mdc-ripple-surface" style="border-radius: 5px;color:#FFF;background: #3b5998;">
+							<i class="fa fa-facebook" aria-hidden="true" style="font-size:20px;"></i>
+
+						</button>
+						</a>
+					<a href="#" style="text-decoration: none;">
+					<button class="mdc-button mdc-ripple-surface" style="border-radius: 5px;color:#FFF;background:#336699;">
+					<i class="fa fa-instagram" aria-hidden="true" style="font-size:20px;"></i>
+					</button>
+					</a>
+					
+				</section>
+
+				<div class="row">
+				<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+			<h4 class="text-center">Copyright &copy; TBM Technologies Pvt Ltd, India. All rights reserved</h4>			</section>
+			</div>
+
+		</div>
+	
+	</div>
+
+ </footer>
+	
+</div>
+
+
+
+<script type="text/javascript" src="js/jquary-script.js"></script>
+<script type="text/javascript">
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+
+
+    } else {
+      panel.style.display = "block";
+      // panel.style.border = "1px solid #cccccc";
+    }
+  });
+
+} 
+</script>
+</body>
+</html>

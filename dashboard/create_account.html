@@ -1,0 +1,886 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>M2N</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-blue.min.css" /> 
+		<link rel="stylesheet" href="css/font-awesome.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/boot-main.css">	
+		<script type="text/javascript" src="js/boot-main.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/wow.min.js"></script>
+		<script type="text/javascript" src="create-user-validation.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet"> 
+		<style type="text/css">
+			  	body{
+    		margin:0px;
+    		padding: 0px;
+    		font-family: 'Roboto', sans-serif;
+
+    	}
+    
+label{
+	font-weight:normal;
+}
+.hide{
+	display: none;
+}
+
+.active-element{
+	background:#212934;
+	color:white;
+}
+.disable-element{
+	background-color:#ca9800;
+	color:white;
+
+
+}
+/*.mdl-js-ripple-effect{
+	transition:.5s linear;
+	box-sizing: bor
+}
+.mdl-js-ripple-effect:hover{
+	transform:scale(1.1);
+}*/
+
+		</style>
+	</head>
+	<body>
+	
+<header class="mdc-top-app-bar mdc-top-app-bar col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:white;">
+	<div class="mdc-top-app-bar-__row" style="background: white">
+		<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start  col-sm-11 col-xs-9 " style="margin-left:10px;">
+		<a href="#" class="mdc-top-app-bar_image"><img src="images/luckylogo.png" style="width: 50%;" class="luckylogo"></a>
+		</section>
+		</div>
+</header>
+
+<section>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div class="row">
+	<div class="col-lg-4 col-md-3 col-sm-2"></div>
+	<div class="col-lg-4 col-md-6 col-sm-8 col-xs-12" style="">
+		<main>
+			<div class="page-content">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="row">
+						<div class="mdc-card " style="background-color:#212934;">
+							<div class="mdc-card__supporting-text">
+                        <div class="mdc-stepper-horizontal-alternative">
+                        	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center  mdl-js-button  mdl-js-ripple-effect disable-element"  style="padding:20px;" id="activated1">
+                            <div id="stepper1" class="mdc-stepper-step active-step ">
+                                <div class="mdc-stepper-circle"><span><a href="" style="color:white"><h5>1</h5></a></span></div>
+                                <div class="mdc-stepper-title">Personal details</div>
+
+                                <div class="mdc-stepper-bar-left"></div>
+                                <div class="mdc-stepper-bar-right"></div>
+                            </div>
+                           </div>
+
+                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center mdl-js-button mdl-js-ripple-effect active-element" style="padding:20px;"  id="activated2">
+                            <div id="stepper2" class="mdc-stepper-step">
+                                <div class="mdc-stepper-circle"><span><a href="" style="color:white"><h5>2</h5></a></span></div>
+                                <div class="mdc-stepper-title">Customer details</div>
+
+                                <div class="mdc-stepper-bar-left"></div>
+                                <div class="mdc-stepper-bar-right"></div>
+                            </div>
+                           </div> 
+
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center mdl-js-button mdl-js-ripple-effect active-element" style="padding:20px;"  id="activated3"> 
+                            <div id="stepper3" class="mdc-stepper-step">
+                                <div class="mdc-stepper-circle"><span><a href="" style="color:white"><h5>3</h5></a></span></div>
+                                <div class="mdc-stepper-title">Alternate Contacts</div>
+
+                                <div class="mdc-stepper-bar-left"></div>
+                                <div class="mdc-stepper-bar-right"></div>
+                            </div>
+                         </div>
+                        </div>
+                    </div>
+						</div>
+						
+					</div>
+
+				</div>
+				<form method="post">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:20px;" id="step1">
+					<div class="row">
+						<div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+						<div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mdc-card">
+						
+						<div class="row">
+							<!-- <div class=" " data-mdc-auto-init="MDCRipple" style="background-color:#272d37;color:white;border-top-left-radius: 4px;border-top-right-radius: 4px;">
+								<div style="padding:10px;"><span class="customer-login-heading" style="text-align:left;">Personal Details</span>
+									
+								</div>
+							</div> -->
+							<div class="mdl-card__title mdl-card--expand active-element" style="">
+                            <h2 class="mdl-card__title-text" style="padding-left: 20px;">Personal details</h2>
+                        </div>
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:10px;">
+							<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="fullname" maxlength="15" id="fullname" onkeyup="return namecheck('#fullname')">
+                                <label class="mdl-textfield__label" >Full Name</label>
+                                <span class="mdl-textfield__error"></span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <!-- password -->
+							</div>
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="username" maxlength="15" onkeyup="return uname('#username')" id="username">
+                                <label class="mdl-textfield__label" >Username</label>
+                                <span class="mdl-textfield__error"></span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="email"  autocomplete="off" name="email" maxlength="" onkeyup="return emailvalid('#email')" id="email">
+                                <label class="mdl-textfield__label" >Email</label>
+                                 <span class="mdl-textfield__error">Input valid email</span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="password" autocomplete="off" name="password" maxlength="" onkeyup="return pass('#password')" id="password">
+                                <label class="mdl-textfield__label" >Password</label>
+                                <span class="mdl-textfield__error"></span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="password" autocomplete="off" name="confirm_password" onkeyup="return pass('#confirm_password')" maxlength="" id="confirm_password">
+                                <label class="mdl-textfield__label">Confirm Password</label>
+                                <span class="mdl-textfield__error"></span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="contact" maxlength="15" onkeyup="return contact1('#contact')" id="contact">
+                                <label class="mdl-textfield__label" >Contact</label>
+                               <span class="mdl-textfield__error">Please input number</span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+
+								<div class="row"  style="padding-bottom:20px;">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								 <div class="mdl-card__actions text-right" style="padding:0px;">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="reset1" onclick="resetall('#step1')">
+                                    Reset
+                                </button>&nbsp;&nbsp;
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" style="background-color:#ca9800;" id="next1">
+                                    Next
+                                </button>
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+							</div>	
+							
+						</div>					
+						
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+					</div>
+				</div>
+
+
+
+<!-------------------------------------------- step 2 -------------------------------------------------->
+
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hide" style="margin-top:20px;" id="step2">
+					<div class="row">
+						<div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+						<div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mdc-card">
+						
+						<div class="row">
+							<!-- <div class=" " data-mdc-auto-init="MDCRipple" style="background-color:#272d37;color:white;border-top-left-radius: 4px;border-top-right-radius: 4px;">
+								<div style="padding:10px;"><span class="customer-login-heading" style="text-align:left;">Personal Details</span>
+									
+								</div>
+							</div> -->
+							<div class="mdl-card__title mdl-card--expand active-element">
+                            <h2 class="mdl-card__title-text" style="padding-left: 20px;">Company details</h2>
+                        </div>
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:10px;">
+							<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="address" maxlength="" onkeyup="return location1('#address')" id="address">
+                                <label class="mdl-textfield__label" >Address</label>
+                                <span class="mdl-textfield__error"></span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <!-- password -->
+							</div>
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="city" maxlength="" onkeyup="return namecheck('#city')" id="city">
+                                <label class="mdl-textfield__label" >City</label>
+                                <span class="mdl-textfield__error"></span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="pin" maxlength="15" onkeyup="return contact1('#pin')" id="pin">
+                                <label class="mdl-textfield__label" >Pin</label>
+                                <span class="mdl-textfield__error">Please use number</span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="state" maxlength="15" id="state" onkeyup="return location1('#state')">
+                                <label class="mdl-textfield__label" >State</label>
+                                <span class="mdl-textfield__error"></span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="country" maxlength="15" id="country" onkeyup="return namecheck('#country')">
+                                <label class="mdl-textfield__label" >Country</label>
+                                <span class="mdl-textfield__error"></span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="gst_number" maxlength="15" id="gst_number" onkeyup="return contact1('#gst_number')">
+                                <label class="mdl-textfield__label" >GST Number</label>
+                                <span class="mdl-textfield__error">Please use number</span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+							<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="pan_number" maxlength="15" id="pan_number" onkeyup="return location1('#pan_number')">
+                                <label class="mdl-textfield__label" >PAN Number</label>
+                                <span class="mdl-textfield__error">Please use Alphanumberic</span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+							<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="weekly_off" maxlength="15" id="weekly_off" onkeyup="return contact1('#weekly_off')">
+                                <label class="mdl-textfield__label" >Weekly Off</label>
+                                  <span class="mdl-textfield__error">Please use number</span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+							<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="timing" maxlength="15" id="timing" onkeyup="return location1('#timing')">
+                                <label class="mdl-textfield__label" >Timing</label>
+                                <span class="mdl-textfield__error"></span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+							<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="contract_start_date" maxlength="15" id="contract_start_date" onkeyup="return location1('#contract_start_date')">
+                                <label class="mdl-textfield__label" >Contract Start Date</label>
+                                <span class="mdl-textfield__error"></span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+							<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="contract_end_date" maxlength="15" id="contract_end_date" onkeyup="return location1('#contract_end_date')">
+                                <label class="mdl-textfield__label" >Contract End Date</label>
+                                <span class="mdl-textfield__error"></span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+							<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="billing_status" maxlength="15" id="billing_status" onkeyup="return location1('#billing_status')">
+                                <label class="mdl-textfield__label" >Billing Status</label>
+                                <span class="mdl-textfield__error"></span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+									<div class="row"  style="padding-bottom:20px;">
+								<div class=" col-lg-3 col-md-3 col-sm-3 col-xs-3">
+									<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="previous2">
+                                        Previous
+                                    </button>
+								</div>
+								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+								 <div class="mdl-card__actions text-right" style="padding:0px;">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="reset2" onclick="resetall('#step1')">
+                                    Reset
+                                </button>&nbsp;&nbsp;
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" style="background-color:#ca9800;" id="next2">
+                                    Next
+                                </button>
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+							</div>	
+							
+						</div>					
+						
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+					</div>
+				</div>
+
+				<!----------------------------------- step 3 ------------------------------------------->
+
+
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hide" style="margin-top:20px;" id="step3">
+					<div class="row">
+						<div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+						<div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mdc-card">
+						
+						<div class="row">
+							<!-- <div class=" " data-mdc-auto-init="MDCRipple" style="background-color:#272d37;color:white;border-top-left-radius: 4px;border-top-right-radius: 4px;">
+								<div style="padding:10px;"><span class="customer-login-heading" style="text-align:left;">Personal Details</span>
+									
+								</div>
+							</div> -->
+							<div class="mdl-card__title mdl-card--expand active-element">
+                            <h2 class="mdl-card__title-text" style="padding-left: 20px;">Alternate Contacts</h2>
+                        </div>
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:10px;">
+							<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="contact_person_name" maxlength="15" id="contact_person_name" onkeyup="return contact1('#contact_person_name')">
+                                <label class="mdl-textfield__label" >Contact Person Name</label>
+                                <span class="mdl-textfield__error">Please use number</span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <!-- password -->
+							</div>
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="contact_job-title" maxlength="15" id="contact_job-title" onkeyup="return contact1('#contact_job-title')">
+                                <label class="mdl-textfield__label" >Contact Job Title</label>
+                                <span class="mdl-textfield__error">Please use number</span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="mobile_number" maxlength="15" id="mobile_number" onkeyup="return contact1('#mobile_number')">
+                                <label class="mdl-textfield__label" >Mobile Number	</label>
+                                <span class="mdl-textfield__error">Please use number</span>
+                                
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="mail-id" maxlength="15" id="mail-id" onkeyup="return contact1('#mail-id')">
+                                <label class="mdl-textfield__label" >Email Id</label>
+                                <span class="mdl-textfield__error">Please use number</span>
+                               
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="alternate_contact"  maxlength="15" id="alternate_contact" onkeyup="return contact1('#alternate_contact')">
+                                <label class="mdl-textfield__label" >Alternate Contact</label>
+                                <span class="mdl-textfield__error">Please use number</span>
+                               
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="alternate_contact_job_title"  maxlength="15" id="alternate_contact_job_title" onkeyup="return namecheck('#alternate_contact_job_title')">
+                                <label class="mdl-textfield__label" >Alternate Contact Job Title</label>
+                                <span class="mdl-textfield__error"></span>
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+
+									<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="alternate_contact_mobile_no" maxlength="15" id="alternate_contact_mobile_no" onkeyup="return contact1('#alternate_contact_mobile_no')">
+                                <label class="mdl-textfield__label" >Alternate Contact Mobile No</label>
+                                <span class="mdl-textfield__error">Please use number</span>
+                                
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+								<div class="row">
+								<div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="first_name1">
+                                <input class="mdl-textfield__input" type="text" autocomplete="off" name="alternate_contact_email_id" maxlength="15" id="alternate_contact_email_id" onkeyup="return emailvalid('#alternate_contact_email_id')">
+                                <label class="mdl-textfield__label" >Alternate Contact Email Id</label>
+                                <span class="mdl-textfield__error">Please use number</span>
+                             
+
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+								<div class="row"  style="padding-bottom:20px;">
+								<div class=" col-lg-3 col-md-3 col-sm-3 col-xs-3">
+									<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="previous3">
+                                        Previous
+                                    </button>
+								</div>
+								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+								 <div class="mdl-card__actions text-right" style="padding:0px;">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="reset3">
+                                    Reset
+                                </button>&nbsp;&nbsp;
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" style="background-color:#ca9800;" id="next3">
+                                    Submit
+                                </button>
+                            </div>
+                            </div>
+
+                            <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+							</div>
+
+							</div>	
+							
+						</div>					
+						
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+					</div>
+				</div>
+			</form>
+
+
+			</div>
+		</main>
+	</div>
+	<div class="col-lg-4 col-md-3 col-sm-2"></div>
+	</div>
+</div>
+</section>
+	
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin:0px;overflow-x: hidden;">
+<footer>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:20px;;padding-left:0px;padding-right:0;margin:0;">
+		<div class="row">
+			<section class="col-md-12 col-sm-12 col-xs-12 text-center">
+						<a href="#" style="text-decoration: none;">
+						<button class="mdc-button mdc-ripple-surface" style="border-radius: 5px;color:#FFF;background:#007bb5;">
+							<i class="fa fa-linkedin" aria-hidden="true" style="font-size:20px;"></i>
+						</button>
+						</a>
+					
+
+						<a href="#" style="text-decoration: none;">
+						<button class="mdc-button mdc-ripple-surface" style="border-radius: 5px;color:#FFF;background: #3b5998;">
+							<i class="fa fa-facebook" aria-hidden="true" style="font-size:20px;"></i>
+
+						</button>
+						</a>
+					<a href="#" style="text-decoration: none;">
+					<button class="mdc-button mdc-ripple-surface" style="border-radius: 5px;color:#FFF;background:#336699;">
+					<i class="fa fa-instagram" aria-hidden="true" style="font-size:20px;"></i>
+					</button>
+					</a>
+					
+				</section>
+
+				<div class="row" style="padding-right:10px;padding-left: 10px;">
+					<div class="col-lg-4 col-md-4 col-sm-2 col-xs-2"></div>
+				<section class="col-lg-4 col-md-4 col-sm-8 col-xs-8" style="">
+
+			<h4 class="text-center" style="word-wrap: break-word;font-size: 15px;">Copyright &copy; TBM Technologies Pvt Ltd, India. All rights reserved</h4>		
+				</section>
+				<div class="col-lg-4 col-md-4 col-sm-2 col-xs-2"></div>
+			</div>
+
+		</div>
+	
+	</div>
+
+ </footer>
+ </div>
+<script type="text/javascript">
+ // function resetall(resetid){
+	// 	$(resetid).find("input[type=text], input[type=number], input[type=password]").val('');
+	// 	$(resetid).find("input[type=checkbox]").prop('checked', false);
+	// 	normalstateall(resetid);
+	//  }
+
+$("#next1").on('click', function(event) {
+var fullname = namecheck('#fullname');
+var username = uname('#username');
+var password = pass('#password');
+var password = pass('#confirm_password');
+var email = emailvalid('#email');
+var contact = contact1('#contact');
+if($('#email').val()==''){input_blank('#email'); event.preventDefault();}
+if($('#username').val()==''){input_blank('#username'); event.preventDefault();}
+if($('#password').val()==''){input_blank('#password'); event.preventDefault();}
+if($('#confirm_password').val()==''){input_blank('#confirm_password'); event.preventDefault();}
+if($('#password').val() != $('#confirm_password').val()){
+		event.preventDefault();
+		}
+
+		if($('#fullname').val()==''){input_blank('#fullname'); event.preventDefault();}
+		if($('#email').val()==''){input_blank('#email'); event.preventDefault();}
+		if($('#contact').val()==''){input_blank('#contact'); event.preventDefault();}
+
+
+		if( ($('#fullname').val() !='') && ($('#username').val() !='') && ($('#email').val() !='') && ($('#password').val() !='')    && ($('#contact').val() !=''))
+		{
+			$('#step1').addClass('hide');
+			$('#step2').removeClass('hide');
+			$('#stepper1').find('h5').text('done');
+			$('#stepper1').find('a').addClass('material-icons');
+			// $('#stepper1').find('.mdc-stepper-title').addClass('hide');
+			$('#activated1').removeClass('disable-element');
+			$('#activated1').addClass('active-element');
+			$('#activated2').addClass('disable-element');
+			$('#activated2').removeClass('active-element');
+
+		}
+
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            event.preventDefault();
+        }
+        event.preventDefault();
+    });
+
+	$('#reset1').on('click',function(event){
+
+		$('#fullname').val('');
+    	$('#username').val('');
+        $('#email').val('');
+    	$('#password').val('');
+    	$('#confirm_password').val('');
+
+    	$('#contact').val('');
+
+    	$('#stepper1').find('h5').text('1');
+		$('#stepper1').find('a').removeClass('material-icons');
+    	$('#stepper2').find('h5').text('2');
+		$('#stepper2').find('a').removeClass('material-icons');
+		$('#stepper3').find('h5').text('3');
+		$('#stepper3').find('a').removeClass('material-icons');
+
+
+
+
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            event.preventDefault();
+        }
+        event.preventDefault();
+	});
+
+
+</script>
+
+<script type="text/javascript">
+	
+
+	$("#next2").on('click', function(event) {
+// var fullname = namecheck('#fullname');
+//       var username = uname('#username');
+// var password = pass('#password');
+// var password = pass('#password2');
+// var email = emailvalid('#email');
+// var contact = contact1('#contact');
+		if($('#address').val()==''){ event.preventDefault();}
+		if($('#city').val()==''){event.preventDefault();}
+		if($('#pin').val()==''){event.preventDefault();}
+		if($('#state').val() == ''){
+		event.preventDefault();
+		}
+
+		if($('#country').val()==''){event.preventDefault();}
+		if($('#gst_number').val()==''){event.preventDefault();}
+		if($('#pan_number').val()==''){event.preventDefault();}
+		if($('#weekly_off').val()==''){event.preventDefault();}
+		if($('#timing').val()==''){event.preventDefault();}
+		if($('#contract_start_date').val()==''){event.preventDefault();}
+		if($('#contract_end_date').val()==''){event.preventDefault();}
+		if($('#billing_status').val()==''){event.preventDefault();}
+
+		if( ($('#address').val() !='') && ($('#city').val() !='') && ($('#pin').val() !='') && ($('#state').val() !='')    && ($('#country').val() !='') && ($('#gst_number').val() !='') && ($('#pan_number').val() !='') && ($('#weekly_off').val() !='') && ($('#timing').val() !='') && ($('#contract_start_date').val() !='') && ($('#contract_end_date').val() !='') && ($('#billing_status').val() !=''))
+		{
+			$('#step2').addClass('hide');
+			$('#step3').removeClass('hide');
+			$('#stepper2').find('h5').text('done');
+			$('#stepper2').find('a').addClass('material-icons');
+			
+			$('#activated2').removeClass('disable-element');
+			$('#activated2').addClass('active-element');
+			$('#activated3').addClass('disable-element');
+			$('#activated3').removeClass('active-element');
+		
+		}
+
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            event.preventDefault();
+        }
+        event.preventDefault();
+    });
+
+    	$('#reset2').on('click',function(event){
+
+		$('#address').val('');
+    	$('#city').val('');
+        $('#pin').val('');
+    	$('#state').val('');
+    	$('#country').val('');
+    	$('#gst_number').val('');
+    	$('#pan_number').val('');
+    	$('#weekly_off').val('');
+        $('#timing').val('');
+    	$('#contract_start_date').val('');
+    	$('#contract_end_date').val('');
+    	$('#billing_status').val('');
+    	$('#stepper2').find('h5').text('2');
+		$('#stepper2').find('a').removeClass('material-icons');
+		
+
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            event.preventDefault();
+        }
+        event.preventDefault();
+	});
+
+</script>
+
+  <script>
+        $("#next1,#next2,#previous2,#previous3,#reset1,#reset2,#reset3").on('click', function(event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                event.preventDefault();
+            }
+            event.preventDefault();
+        });
+    </script>
+
+<script>
+        $('#previous2').click(function() {
+            $('#step1').removeClass('hide');
+            $('#step2').addClass('hide');
+            $('#activated1').addClass('disable-element');
+			$('#activated2').removeClass('disable-element');
+			$('#activated2').addClass('active-element');
+            
+        });
+        $('#previous3').click(function() {
+            
+            $('#step2').removeClass('hide');
+            $('#step3').addClass('hide');
+            $('#activated2').addClass('disable-element');
+			$('#activated3').removeClass('disable-element');
+			$('#activated3').addClass('active-element');
+        });
+
+       
+</script>
+
+<script type="text/javascript">
+	
+$('#reset3').on('click',function(event){
+
+		$('#contact_person_name').val('');
+    	$('#contact_job-title').val('');
+        $('#mobile_number').val('');
+    	$('#mail-id').val('');
+    	$('#country').val('');
+    	$('#alternate_contact').val('');
+    	$('#alternate_contact_job_title').val('');
+    	$('#alternate_contact_mobile_no').val('');
+        $('#alternate_contact_email_id').val('');
+   
+
+
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            event.preventDefault();
+        }
+        event.preventDefault();
+	});
+
+</script>
+
+
+
+	</body>
+	</html>

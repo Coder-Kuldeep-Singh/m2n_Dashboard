@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>World population</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <canvas id="myChart" width="1600" height="900"></canvas>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script type="text/javascript">
+           // Our labels along the x-axis
+              var years = ['Male','Female','Transgender'];
+              // For drawing the lines
+              var northAmerica = [33,33,33];
+              var bgcolor = ['#e97d31','#4472c4','gray']
+
+              var ctx = document.getElementById("myChart");
+              var myChart = new Chart(ctx, {
+                
+                type: 'pie',
+                 data: {
+                 labels: years,
+                 datasets: [{ 
+                      data: northAmerica,
+                      borderColor: "white",
+                      backgroundColor:bgcolor,
+                                          }]
+                },
+                 options: {
+                    title: {
+                      display: true,
+                      text: 'Visitors By Age group',
+                      fontSize:26,
+                      fontColor:'black',
+                      padding:10,
+                      position:'top'
+                            },
+                      legend: {
+                        display: true,
+                        position: 'bottom',
+                              },
+                               animation: {
+            animateScale: true,
+            animateRotate: true
+        }
+                          }
+              });
+    </script>
+  </body>
+</html>

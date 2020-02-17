@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>M2N</title>
+<script src="../js/Chart.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../material_design/material-components-web.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="../css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="../css/boot-main.css"> 
+<script type="text/javascript" src="../js/boot-main.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/wow.min.js"></script>
+<script type="text/javascript" src="../js/material_js.js"> </script>
+<script type="text/javascript" src="../js/script.js"></script>
+<style type="text/css">
+  table th{
+    text-align: center;
+    font-weight: normal;
+  }
+  table td{
+    text-align: left;
+    font-weight: normal;
+  }
+</style>
+
+
+</head>
+<body style="background-color:#e8e9ec;">
+  
+<div class="mdc-card col-lg-2 col-md-2" id="sidenavigation" style="background:white;height:100%;position:fixed;left:0;top:0;bottom:0;color: #3C4858;">
+<aside class="mdc-drawer mdc-drawer--modal">
+   <div class="mdc-drawer__content">
+    <a href="../dashboard.html" target="target_self">
+    <div class="col-lg-12 col-md-12"  class="side-logo">
+        <img src="../images/luckylogo.png" style="width:100%;padding-top: 10px;">
+        <hr style="width: 100%;">
+        
+      </div>
+      </a>
+      
+    <nav class="mdc-list col-lg-12 col-md-12" style="padding: 0px;color:#272d37">
+      <a class="mdc-list-item  col-lg-12 col-md-12"  href="../dashboard.html" aria-current="page" style="text-decoration:none;border-radius: 5px;">
+       <i class="material-icons mdc-list-item__graphic md-40" aria-hidden="true" style="color:black;margin-right: 15px;">dashboard</i>
+       <h5 class="mdc-list-item__text" >Dashboard</h5>
+      </a>
+      <a class="mdc-list-item col-lg-12 col-md-12" href="../support.html"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+       <i class="fa fa-phone" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+       <h5 class="mdc-list-item__text">Support</h5>
+      </a>
+
+      <!-- drop down menu on Settings -->
+
+      <div  id="settings-open" style="cursor: pointer;">
+       
+      <a class="mdc-list-item col-lg-12 col-md-12"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+       <i class="fa fa-cog" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+       <h5 class="mdc-list-item__text">Setting</h5>
+       <i class="fa fa-caret-down" aria-hidden="true" style="font-size: 22px;position: absolute;right:10px;"></i>
+      </a>
+      <div id="aside-navhide">
+      
+      <a class="mdc-list-item col-lg-12 col-md-12" href="../support.html"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+       <i class="fa fa-clipboard" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+       <h5 class="mdc-list-item__text">&nbsp;&nbsp;&nbsp;Config Rules</h5>
+      </a>
+      <a class="mdc-list-item col-lg-12 col-md-12" href="../support.html"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+       <i class="fa fa-clipboard" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+       <h5 class="mdc-list-item__text">&nbsp;&nbsp;&nbsp;Config Devices</h5>
+      </a>
+      </div>
+
+      </div>
+
+
+<!-- drop down menu on Settings -->
+
+      <a class="mdc-list-item col-lg-12 col-md-12" href="../FAQs.html" style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+       <i class="material-icons mdc-list-item__graphic md-40" aria-hidden="true" style="color:black;margin-right: 15px;">help</i>
+       <h5 class="mdc-list-item__text">FAQs</h5>
+      </a>
+      <a class="mdc-list-item col-lg-12 col-md-12" href="../customer_login.html"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+       <i class="fa fa-sign-out" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+       <h5 class="mdc-list-item__text">Logout</h5>
+      </a>
+      <!-- <a class="mdc-list-item col-lg-12 col-md-12" href="#" style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+       <i class="material-icons mdc-list-item__graphic md-40" aria-hidden="true"> settings</i>
+       <h4 class="mdc-list-item__text">Settings</h4>
+      </a> -->
+    </nav>
+   </div>
+  </aside>
+  </div> 
+  <div class="col-lg-2 col-md-2"></div>
+ <div class="mdc-drawer-content main-content col-lg-10 col-md-10 col-sm-12 col-xs-12" style="padding-left:0px;"> 
+  
+  <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-top-app-bar" id="nav-bar">
+    <div class="mdc-top-app-bar__row">
+
+
+        <section class="col-md-6 col-sm-6 col-xs-6 mdc-top-app-bar__section mdc-top-app-bar__section--align-start"  style="padding-top:0;">
+          <img src="../images/luckylogo.png" id="logoat-response">           
+        </section>
+
+        <section class="col-md-6 col-sm-6 col-xs-6 mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+        <!-- 
+          <div  class="profile">
+            <button class="mdc-button mdc-ripple-surface sidenotifiction" style="border-radius: 5px;color:#272d37;padding:0px;"><i class="mdc-fab__icon material-icons">notifications_active</i></button>
+          </div> -->
+
+          <div class="profile" >
+            <button class="mdc-button mdc-ripple-surface right-menu" style="border-radius: 5px;color:#272d37;"  id="hamburgar-menu"><i class="mdc-fab__icon material-icons">menu</i></button>
+                          </div>
+              
+        </section>
+        
+
+    </div>
+    <!-- Notifications -->
+
+  <!-- <div class="row">
+      <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="float:right;">
+        <aside class="mdc-drawer mdc-card sidenotification " style="display: none;">
+            <div class="mdc-drawer__content" >
+              <ul style="padding:5px;">
+                <nav class="mdc-list"  style="padding-top: 5px;padding-bottom: 0px;">
+                  <li> <a class="mdc-list-item" href="#" target="target_self" aria-current="page"  style="text-decoration: none">
+                    <h4 class="mdc-list-item__text">Alert</h4>
+                      
+                  </a>
+                  
+                  </li>
+                     
+                    <li><a class="mdc-list-item" href="#" target="target_self" style="text-decoration: none">
+                     
+                      <h4 class="mdc-list-item__text">Some Quotes</h4>
+                  </a></li>
+            </nav>
+            </ul>
+  </div>
+</aside>
+        </section>
+    </div> -->
+
+
+
+
+
+
+    <!-- Notifications -->
+    <!-- onclick side menu -->
+    <div class="row">
+      <section class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="float:right;padding: 0px;">
+        <aside class="mdc-drawer mdc-card sidemnu" style="  display: none;">
+            <div class="mdc-drawer__content" >
+              <ul style="padding:5px;">
+                <li><a class="mdc-list-item" href="../dashboard.html"  style="text-decoration: none;">
+                     
+                      <h5 class="mdc-list-item__text">Dashboard</h5>
+                  </a></li>
+                <!--   <li><a class="mdc-list-item" href="../report.html"  style="text-decoration: none;">
+                     
+                      <h5 class="mdc-list-item__text">Report</h5>
+                  </a></li> -->
+                  <li><a class="mdc-list-item" href="../support.html"  style="text-decoration: none;">
+                     
+                      <h5 class="mdc-list-item__text">Support</h5>
+                  </a></li>
+
+                <nav class="mdc-list"  style="padding-top: 5px;padding-bottom: 0px;">
+                  <li> <a class="mdc-list-item" href="../settings.html"  aria-current="page"  style="text-decoration: none">
+                    <h5 class="mdc-list-item__text">Settings</h5>
+                      
+                  </a>
+                  <ul style="padding:0px;">
+                    <center>
+                    <li> <a class="mdc-list-item" href="../settings.html"  aria-current="page"  style="text-decoration: none">
+                    <h5 class="mdc-list-item__text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configure Rules</h5>
+                      
+                  </a></li>
+                  <li> <a class="mdc-list-item" href="../settings.html"  aria-current="page"  style="text-decoration: none">
+                    <h5 class="mdc-list-item__text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configure Devices</h5>
+                      
+                  </a></li>
+                    </center>
+                  </ul>
+                  
+                  </li>
+                  <li><a class="mdc-list-item" href="../FAQs.html"  style="text-decoration: none;">
+                     
+                      <h5 class="mdc-list-item__text">FAQs</h5>
+                  </a></li>
+                     
+                    <li><a class="mdc-list-item" href="../customer_login.html"  style="text-decoration: none;">
+                     
+                      <h5 class="mdc-list-item__text">Logout</h5>
+                  </a></li>
+            </nav>
+            </ul>
+  </div>
+</aside>
+        </section>
+    </div>
+<!-- onclick side menu -->
+  </header> 
+
+<!-- header close -->
+
+
+<!-- !--percentage indicator  -->
+<!-- section3 -->
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0px;margin-top:50px;padding-left: 10px;">
+  <div class="col-lg-2 col-md-2"></div>
+  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-center mdc-card" style="padding:0px;margin-top:50px;border-radius: 3px;">
+
+  <div clas="row">
+    <div class="mdc-card" id="out-sider-block" style="background:#272d37;height:auto;">
+
+
+              <nav class="mdc-list">
+                    <div class="mdc-list-item" style="text-decoration:none;border-radius: 5px;">
+                      <i class="material-icons mdc-list-item__graphic" style="font-size:25px;color:white">table</i>
+                     <h5 class="mdc-list-item__text" style="font-size:18px;color:white;padding-top:2px;font-weight: normal;">HOURLY VISITORS BY DURATION</h5>
+                     </div>
+                  </nav>
+
+              <!-- <h3 class="vbag" style="font-size:25px;color:white;padding-top:15px;"> <i class="material-icons mdc-list-item__graphic md-40" aria-hidden="true" style="font-size:40px;color:white;cursor: pointer;">dashboard</i>CUSTOMER DASHBOARD</h3>
+ -->
+          </div>
+
+     
+      <div class="table-responsive" style="padding: 30px;margin-top:20px;">
+    <table class="table table-bordered table-hover" style="margin-bottom: 0;">
+      <thead style="color:black;">
+        <tr  style="text-align:center;"> 
+          <th>S.No</th>
+        <th>Hour</th>
+        <th>0-5 MINS</th>
+        <th>5-10MINS</th>
+        <th>10-20MINS</th>
+        <th>20-30MINS</th>
+        <th>30-45MINS</th>
+        <th>45-60MINS</th>
+        <th>Total</th>
+        <th>Average</th>
+        
+        </tr>
+      </thead>
+      <tbody>
+         <script type="text/javascript">
+         var a = 15
+          for(i=0;i<a;i++){
+            document.write('<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>');            }
+        </script>
+         <tr>
+           <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+         <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+         
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  </div>
+</div>
+<div class="col-lg-2 col-md-2"></div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:20vh;">
+    <div class="row">
+      <section class="col-md-12 col-sm-12 col-xs-12 text-center">
+            <a href="#" style="text-decoration: none;">
+            <button class="mdc-button mdc-ripple-surface" style="border-radius: 5px;color:#FFF;background:#007bb5;">
+              <i class="fa fa-linkedin" aria-hidden="true" style="font-size:20px;"></i>
+            </button>
+            </a>
+          
+
+            <a href="#" style="text-decoration: none;">
+            <button class="mdc-button mdc-ripple-surface" style="border-radius: 5px;color:#FFF;background: #3b5998;">
+              <i class="fa fa-facebook" aria-hidden="true" style="font-size:20px;"></i>
+
+            </button>
+            </a>
+          <a href="#" style="text-decoration: none;">
+          <button class="mdc-button mdc-ripple-surface" style="border-radius: 5px;color:#FFF;background:#336699;">
+          <i class="fa fa-instagram" aria-hidden="true" style="font-size:20px;"></i>
+          </button>
+          </a>
+          
+        </section>
+
+        <div class="row">
+        <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+      <h4 class="text-center">Copyright &copy; TBM Technologies Pvt Ltd, India. All rights reserved</h4>      </section>
+      </div>
+
+    </div>
+  
+  </div>
+
+ </footer>
+
+
+
+</div>
+ 
+<script type="text/javascript" src="../js/jquary-script.js"></script>
+<script type="text/javascript" src="../js/line-graph.js"></script>
+
+
+</body>
+</html>

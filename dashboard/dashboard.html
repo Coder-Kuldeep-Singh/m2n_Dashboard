@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>M2N</title>
+<script src="js/Chart.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="material_design/material-components-web.min.css">
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="css/boot-main.css">	
+<script type="text/javascript" src="js/boot-main.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/wow.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/radialIndicator.js"></script>
+
+<style type="text/css">
+	body{
+		font-family: 'Roboto', sans-serif;
+	}
+
+#indicatorContainerWrap,#indicatorContainer,#indicator,#ats,#nvt,#rvt{
+	 display:inline-block;
+	 position:relative;
+}
+#prgLogo{
+	 position:absolute;
+	 top:50%;
+	 left: 50%;
+	 transform: translate(-50%,-50%);
+		}
+		
+		/*---------modal-----------*/
+
+</style>
+
+
+</head>
+<body style="background-color:#e8e9ec;">
+	
+	<!-- Chart Overlay -->
+
+
+ <!-- The Modal -->
+ <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content mdc-card">
+	 <div class="modal-header">
+		<span class="close" onclick="osbdoff()">&times;</span>
+		<h4 style="text-align:center;">Please enter period to generate the report:<br>
+Option served by Device</h4>
+	 </div>
+	 <div class="modal-body">
+		<span><input type="date" name="" id="vstartdate">&nbsp;&nbsp; To &nbsp;&nbsp;<input type="date" name="" id="venddate"></span>
+	 </div>
+	 <div class="modal-footer">
+		<button onclick="optionsbd()"> Submit</button>
+	 </div>
+  </div>
+
+</div>
+
+
+<!-- model -->
+<div id="myModal1" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content mdc-card">
+	 <div class="modal-header">
+		<span class="close" onclick="vbdoff()">&times;</span>
+		<h4 style="text-align:center;">Please enter period to generate the report:<br>
+Visitors By Device</h4>
+	 </div>
+	 <div class="modal-body">
+		<span><input type="date" name="" id="vastartdate">&nbsp;&nbsp; To &nbsp;&nbsp;<input type="date" name="" id="vaenddate"></span>
+	 </div>
+	 <div class="modal-footer">
+		<button onclick="visitorbd()">Submit</button>
+	 </div>
+  </div>
+
+</div>
+<!-- model -->
+
+<div id="myModal2" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content mdc-card">
+	 <div class="modal-header">
+		<span class="close" onclick="nrvoff()">&times;</span>
+		<h4 style="text-align:center;">Please enter period to generate the report:<br>
+New & Returning Visitors</h4>
+	 </div>
+	 <div class="modal-body">
+		<span><input type="date" name="" id="vbstartdate">&nbsp;&nbsp; To &nbsp;&nbsp;<input type="date" name="" id="vbenddate"></span>
+	 </div>
+	 <div class="modal-footer">
+		<button onclick="newandrv()">Submit</button>
+	 </div>
+  </div>
+
+</div>
+
+<!-- model -->
+
+<div id="myModal3" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content mdc-card">
+	 <div class="modal-header">
+		<span class="close" onclick="dvbdoff()">&times;</span>
+		<h4 style="text-align:center;">Please enter period to generate the report:<br>
+Daily Visitors By Duration</h4>
+	 </div>
+	 <div class="modal-body">
+		<span><input type="date" name="" id="vbstartdate">&nbsp;&nbsp; To &nbsp;&nbsp;<input type="date" name="" id="vbenddate"></span>
+	 </div>
+	 <div class="modal-footer">
+		<button onclick="dailyvbd()">Submit</button>
+	 </div>
+  </div>
+
+</div>
+
+
+<!-- model -->
+
+<div id="myModal4" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content mdc-card">
+	 <div class="modal-header">
+		<span class="close" onclick="dvbtodoff()">&times;</span>
+		<h4 style="text-align:center;">Please enter period to generate the report:<br>
+Daily Visitors By Time Of Day</h4>
+	 </div>
+	 <div class="modal-body">
+		<span><input type="date" name="" id="vbstartdate">&nbsp;&nbsp; To &nbsp;&nbsp;<input type="date" name="" id="vbenddate"></span>
+	 </div>
+	 <div class="modal-footer">
+		<button onclick="dailyvbtod()">Submit</button>
+	 </div>
+  </div>
+
+</div>
+
+<!-- model -->
+
+<div id="myModal5" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content mdc-card">
+	 <div class="modal-header" >
+		<span class="close" onclick="hvbdoff()">&times;</span>
+		<h4 style="text-align:center;">Please enter period to generate the report:<br>
+Hourly Visitors By Duration</h4>
+	 </div>
+	 <div class="modal-body">
+		<span><input type="date" name="" id="vbstartdate">&nbsp;&nbsp; To &nbsp;&nbsp;<input type="date" name="" id="vbenddate"></span>
+	 </div>
+	 <div class="modal-footer">
+		<button onclick="hourlyvbd()">Submit</button>
+	 </div>
+  </div>
+
+</div>
+
+<!-- model -->
+
+<div id="myModal6" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content mdc-card">
+	 <div class="modal-header">
+		<span class="close" onclick="dwvoff()">&times;</span>
+		<h4 style="text-align:center;">Please enter period to generate the report:<br>
+Day Wise Visitors </h4>
+	 </div>
+	 <div class="modal-body">
+		<span><input type="date" name="" id="vbstartdate">&nbsp;&nbsp; To &nbsp;&nbsp;<input type="date" name="" id="vbenddate"></span>
+	 </div>
+	 <div class="modal-footer">
+		<button onclick="daywv()">Submit</button>
+	 </div>
+  </div>
+
+</div>
+<!-- model -->
+
+<div id="myModal7" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content mdc-card">
+	 <div class="modal-header">
+		<span class="close" onclick="vbgoff()">&times;</span>
+		<h4 style="text-align:center;">Please enter period to generate the report:<br>
+Visitors By Gender </h4>
+	 </div>
+	 <div class="modal-body">
+		<span><input type="date" name="" id="vbstartdate">&nbsp;&nbsp; To &nbsp;&nbsp;<input type="date" name="" id="vbenddate"></span>
+	 </div>
+	 <div class="modal-footer">
+		<button onclick="visitorsbg()">Submit</button>
+	 </div>
+  </div>
+
+</div>
+<!-- Modal -->
+
+<div id="myModal8" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content mdc-card">
+	 <div class="modal-header">
+		<span class="close" onclick="vbagoff()">&times;</span>
+		<h4 style="text-align:center;">Please enter period to generate the report:<br>
+Visitors By Age Group </h4>
+	 </div>
+	 <div class="modal-body">
+		<span><input type="date" name="" id="vbstartdate">&nbsp;&nbsp; To &nbsp;&nbsp;<input type="date" name="" id="vbenddate"></span>
+	 </div>
+	 <div class="modal-footer">
+		<button onclick="visitorsbag()">Submit</button>
+	 </div>
+  </div>
+
+</div>
+<div class="mdc-card col-lg-2 col-md-2" id="sidenavigation" style="background:white;height:100%;position:fixed;left:0;top:0;bottom:0;color: #3C4858;">
+<aside class="mdc-drawer mdc-drawer--modal">
+	 <div class="mdc-drawer__content">
+		<a href="dashboard.html" target="target_self">
+		<div class="col-lg-12 col-md-12"  class="side-logo">
+				<img src="images/luckylogo.png" style="width:100%;padding-top: 10px;">
+				<hr style="width: 100%;">
+				
+			</div>
+			</a>
+			
+		<nav class="mdc-list col-lg-12 col-md-12" style="padding: 0px;color:#272d37">
+		  <a class="mdc-list-item  col-lg-12 col-md-12"  href="dashboard.html" aria-current="page" style="text-decoration:none;border-radius: 5px;">
+			 <i class="material-icons mdc-list-item__graphic md-40" aria-hidden="true" style="color:black;margin-right: 15px;">dashboard</i>
+			 <h5 class="mdc-list-item__text" >Dashboard</h5>
+		  </a>
+		  <a class="mdc-list-item col-lg-12 col-md-12" href="support.html"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+			 <i class="fa fa-phone" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+			 <h5 class="mdc-list-item__text">Support</h5>
+		  </a>
+
+		  <!-- drop down menu on Settings -->
+
+		  <div  id="settings-open" style="cursor: pointer;">
+			 
+		  <a class="mdc-list-item col-lg-12 col-md-12"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+			 <i class="fa fa-cog" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+			 <h5 class="mdc-list-item__text">Setting</h5>
+			 <i class="fa fa-caret-down" aria-hidden="true" style="font-size: 22px;position: absolute;right:10px;"></i>
+		  </a>
+		  <div id="aside-navhide">
+			
+			<a class="mdc-list-item col-lg-12 col-md-12" href="support.html"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+			 <i class="fa fa-clipboard" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+			 <h5 class="mdc-list-item__text">&nbsp;&nbsp;&nbsp;Config Rules</h5>
+		  </a>
+		  <a class="mdc-list-item col-lg-12 col-md-12" href="support.html"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+			 <i class="fa fa-clipboard" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+			 <h5 class="mdc-list-item__text">&nbsp;&nbsp;&nbsp;Config Devices</h5>
+		  </a>
+		  </div>
+
+		  </div>
+
+
+<!-- drop down menu on Settings -->
+
+		  <a class="mdc-list-item col-lg-12 col-md-12" href="FAQs.html" style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+			 <i class="material-icons mdc-list-item__graphic md-40" aria-hidden="true" style="color:black;margin-right: 15px;">help</i>
+			 <h5 class="mdc-list-item__text">FAQs</h5>
+		  </a>
+			<a class="mdc-list-item col-lg-12 col-md-12" href="customer_login.html"  style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+			 <i class="fa fa-sign-out" aria-hidden="true" style="font-size: 22px;margin-right: 15px;"></i>
+			 <h5 class="mdc-list-item__text">Logout</h5>
+		  </a>
+		  <!-- <a class="mdc-list-item col-lg-12 col-md-12" href="#" style="text-decoration:none;border-radius: 5px;margin-top:10px;">
+			 <i class="material-icons mdc-list-item__graphic md-40" aria-hidden="true"> settings</i>
+			 <h4 class="mdc-list-item__text">Settings</h4>
+		  </a> -->
+		</nav>
+	 </div>
+  </aside>
+  </div>		
+  <div class="col-lg-2 col-md-2"></div>
+ <div class="mdc-drawer-content main-content col-lg-10 col-md-10 col-sm-12 col-xs-12" style="padding-left:0px;"> 
+	
+	<header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mdc-top-app-bar" id="nav-bar">
+		<div class="mdc-top-app-bar__row">
+
+
+				<section class="col-md-6 col-sm-6 col-xs-6 mdc-top-app-bar__section mdc-top-app-bar__section--align-start"  style="padding-top:0;">
+					<img src="images/luckylogo.png" id="logoat-response">
+		
+				</section>
+
+				<section class="col-md-6 col-sm-6 col-xs-6 mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+					<!-- <div  class="profile">
+						<button class="mdc-button mdc-ripple-surface sidenotifiction" style="border-radius: 5px;color:#272d37;padding:0px;"><i class="mdc-fab__icon material-icons">notifications_active</i></button>
+					</div> -->
+
+					<div class="profile" >
+						<button class="mdc-button mdc-ripple-surface right-menu" style="border-radius: 5px;color:#272d37;" id="hamburgar-menu"><i class="mdc-fab__icon material-icons">menu</i></button>
+														 
+					</div>
+							
+				</section>
+				
+
+		</div>
+		<!-- Notifications -->
+
+	<!-- <div class="row">
+			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="float:right;">
+				<aside class="mdc-drawer mdc-card sidenotification " style="display: none;">
+					<div class="mdc-drawer__content" >
+						<ul style="padding:5px;">
+							<nav class="mdc-list"  style="padding-top: 5px;padding-bottom: 0px;">
+								<li> <a class="mdc-list-item" href="#" target="target_self" aria-current="page"  style="text-decoration: none">
+									<h4 class="mdc-list-item__text text-changer">Alert</h4>
+									  
+									</a>
+									
+									</li>
+									
+									<li><a class="mdc-list-item" href="#" target="target_self" style="text-decoration: none">
+								 
+										<h4 class="mdc-list-item__text text-changer">Some Quotes</h4>
+								</a></li>
+					</nav>
+					</ul>
+  </div>
+</aside>
+				</section>
+		</div> -->
+
+
+
+
+
+<!-- 
+		 Notifications -->
+		<!-- onclick side menu -->
+		<div class="row">
+			<section class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="float:right;padding: 0px;">
+				<aside class="mdc-drawer mdc-card sidemnu" style="	display: none;">
+					<div class="mdc-drawer__content" >
+						<ul style="padding:5px;">
+					 <li><a class="mdc-list-item" href="dashboard.html" target="target_self" style="text-decoration: none;">
+							
+							 <h5 class="mdc-list-item__text">Dashboard</h5>
+						</a></li>
+						<!-- <li><a class="mdc-list-item" href="report.html"  style="text-decoration: none;">
+							
+							 <h5 class="mdc-list-item__text">Report</h5>
+						</a></li> -->
+						<li><a class="mdc-list-item" href="support.html"  style="text-decoration: none;">
+							
+							 <h5 class="mdc-list-item__text">Support</h5>
+						</a></li>
+
+							<nav class="mdc-list"  style="padding-top: 5px;padding-bottom: 0px;">
+								<li> <a class="mdc-list-item" href="settings.html"  aria-current="page"  style="text-decoration: none">
+									<h5 class="mdc-list-item__text">Settings</h5>
+									  
+									</a>
+									<ul style="padding:0px;">
+										<center>
+										<li> <a class="mdc-list-item" href="settings.html"  aria-current="page"  style="text-decoration: none">
+									<h5 class="mdc-list-item__text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configure Rules</h5>
+									  
+									</a></li>
+									<li> <a class="mdc-list-item" href="settings.html"  aria-current="page"  style="text-decoration: none">
+									<h5 class="mdc-list-item__text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configure Devices</h5>
+									  
+									</a></li>
+										</center>
+									</ul>
+									
+									</li>
+						<li><a class="mdc-list-item" href="FAQs.html"  style="text-decoration: none;">
+							
+							 <h5 class="mdc-list-item__text">FAQs</h5>
+						</a></li>
+									
+									<li><a class="mdc-list-item" href="customer_login.html" style="text-decoration: none;">
+								 
+										<h5 class="mdc-list-item__text">Logout</h5>
+								</a></li>
+					</nav>
+					</ul>
+  </div>
+</aside>
+				</section>
+		</div>
+
+	</header>	
+
+<!-- header close -->
+
+
+<!-- !--percentage indicator  -->
+
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+	<div clas="row">
+				
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 staticcard" >
+					<div class="mdc-card"  style="border-radius:3px;background: #FFF;">
+					<div class="col-lg-12 col-md-12 mdc-card" id="out-sider-block" style="background:#ca9800;height:auto;">
+
+
+							<nav class="mdc-list">
+								  <div class="mdc-list-item" style="text-decoration:none;border-radius: 5px;">
+									  <i class="material-icons mdc-list-item__graphic" style="font-size:25px;color:white">dashboard</i>
+									 <h5 class="mdc-list-item__text" style="font-size:18px;color:white;padding-top:2px;">DASHBOARD</h5>
+									 </div>
+								</nav>
+
+							<!-- <h3 class="vbag" style="font-size:25px;color:white;padding-top:15px;">	<i class="material-icons mdc-list-item__graphic md-40" aria-hidden="true" style="font-size:40px;color:white;cursor: pointer;">dashboard</i>CUSTOMER DASHBOARD</h3>
+ -->
+					</div>
+					<div class="col-lg-12 col-md-12" style="padding-left:5%;padding-top:10px;color: #3C4858;">
+							<h4 style="line-height: 25px" class="text-changer">09-07-2019 11:13</h4>
+							<h4 style="line-height: 25px;" class="text-changer">*ara Limited<br>
+							Select City Mall, Saket<br>
+							New Delhi</h4>
+					</div>
+					<div class="col-lg-12 col-md-12" style="padding-left:5%;padding-top:10px;color: #3C4858;">
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<h4 class=" text-changer">Devices</h4>
+							</div>
+						</div>
+						<div class="row" style="padding-right:5%;">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+								<h4 class="text-left text-changer">OK &nbsp;<a href="./devices_reoprt/ok.html" style="text-decoration:none;"><span>6</span></a></h4>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+								<h4 class="text-center text-changer">Check &nbsp;<a href="./devices_reoprt/check.html" style="text-decoration:none;"><span>2</span></a></h4>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+								<h4 class="text-right text-changer">Critical &nbsp;<a href="./devices_reoprt/critical.html" style="text-decoration:none;"><span>0</span></a></h4>
+							</div>
+						</div>
+					</div>
+					</div>
+
+
+
+
+					</div>
+
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 staticcard" style="padding-right:5px;">
+					<div class="mdc-card" style="border-radius:3px;background: #FFF;">
+					<div class="col-lg-12 col-md-12 mdc-card" id="out-sider-block" style="background:#272d37;height:auto;">
+
+							<nav class="mdc-list">
+								  <div class="mdc-list-item" style="text-decoration:none;border-radius: 5px;">
+									 <i class="material-icons mdc-list-item__graphic" style="font-size:25px;color:white">dashboard</i>
+									 <h4 class="mdc-list-item__text" style="font-size:18px;color:white;padding-top:2px;">SUMMARY STATISTICS</h4>
+									 </div>
+								</nav>
+
+							<!-- <h3 class="vbag" style="font-size:25px;color:white;">	<i class="material-icons mdc-list-item__graphic md-40" aria-hidden="true" style="font-size:42px;color:white;cursor: pointer;">equalizer</i>SUMMARY STATISTICS</h3> --> 							
+					</div>
+
+					<div class="col-lg-12 col-md-12 text-left" style="padding-top:30px;height: auto;color: #3C4858;padding-bottom: 40px;padding-left: 0px;">
+
+
+					<div class="row text-center" style="word-break: break-word;padding-left:0px;">
+						<!-- 
+								 -->
+								 	<div class="" style="">
+							<h6>Today vs Yesterday</h6>
+							</div>
+								<div>
+								<div class="statis">
+
+								
+									<div id="indicatorContainerWrap">
+										<div id="indicatorContainer">
+											<span id="prgLogo"><h6>Today
+								<h6 id="valuesoftdy"></h6>
+								</h6></span>
+										</div>
+	 
+									</div>
+								<!-- <div class ="bars">
+								<h5 style="margin-top:35px;">Today
+								<h6>348</h6>
+								</h5>
+								</div> -->
+								<p>
+									<span>
+										
+								<i class="fa fa-arrow-up" id="conditionals1"><span id="growths"> Growth</span></i>
+								<i class="fa fa-arrow-down" id="conditionals"> <span id="decreases"> Decrease</span></i>
+								</span>
+									</p>	
+								</div>
+								
+								<div class="statis">
+									<div id="indicatorContainerWrap">
+										<div id="indicator">
+											<span id="prgLogo"><h6>Today vs <br>Yesterday
+									<h6 id="valuesoftdyvystrdy"></h6>
+								</h6></span>
+										</div>
+	 
+									</div>
+								<!-- <div class ="bars">
+								<h5 style="margin-top:35px;">Today vs <br>Yesterday
+									<h6>+15.3%</h6>
+								</h5>
+								</div> -->
+								<p>
+									<span>
+								<i class="fa fa-arrow-up" id="conditionals3"> <span id="growths"> Growth</span></i>
+								<i class="fa fa-arrow-down" id="conditionals2"> <span id="decreases"> Decrease</span></i>
+								</span>
+								</p>
+								</div>	
+						
+
+								<div class="statis">
+									<div id="indicatorContainerWrap">
+										<div id="ats">
+											<span id="prgLogo"><h6> Average Time<br> Spent
+									<h6  id="atsvalue"></h6>
+								</h6></span>
+										</div>
+	 
+									</div>
+								<!-- <div class ="bars">
+								<h5 style="margin-top:35px;"> Average Time<br> Spent
+									<h6>23 minutes</h6>
+								</h5>
+									
+								</div> -->
+								<p>
+									<span>
+								<i class="fa fa-arrow-up" id="conditionals5"> <span id="growths" class="atsval1"></span></i>
+								<i class="fa fa-arrow-down" id="conditionals4"> <span id="decreases" class="atsval2"></span></i>
+								</span>
+								</p>
+								</div>
+						
+
+								<div class="statis">
+									<div id="indicatorContainerWrap">
+										<div id="nvt">
+											<span id="prgLogo"><h6>New Visitors<br> Today
+									<h6 id="valuesoftdy"></h6>
+								</h6></span>
+										</div>
+	 
+									</div>
+								<!-- <div class ="bars">
+								<h5 style="margin-top:35px;">New Visitors<br> Today
+									<h6>201</h6>
+								</h5>
+								
+								</div> -->	
+								<p>
+									<span>
+								<i class="fa fa-arrow-up" id="conditionals7"> <span id="growths"> Growth</span></i>
+								<i class="fa fa-arrow-down" id="conditionals6"> <span id="decreases"> Decrease</span></i>
+								</span>
+								</p>
+								</div>
+						
+								<div class="statis">
+									<div id="indicatorContainerWrap">
+										<div id="rvt">
+											<span id="prgLogo"><h6>Repeat Visiors Today
+									<h6 id="valuesoftdy"></h6>
+								</h6></span>
+										</div>
+	 
+									</div>
+								<!-- <div class ="bars">
+								<h5 style="margin-top:35px;">Repeat Visiors Today
+									<h6>147</h6>
+								</h5>
+								
+								</div> --> 
+								<p>
+									<span>
+								<i class="fa fa-arrow-up" id="conditionals9"> <span id="growths"> Growth</span></i>
+								<i class="fa fa-arrow-down" id="conditionals8"> <span id="decreases"> Decrease</span></i>
+								</span>
+								</p>
+								</div>
+
+					</div>	
+					</div>
+					</div>
+
+					</div>
+		</div>
+</div>	
+
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="padding-right:0;margin-top:50px;" id="canvasofchart">
+<div clas="row">
+
+	
+		<div class="mdc-card"  style="border-radius:3px;background: #FFF;padding-top: 30px;padding-bottom: 30px;">
+			<div class="row" style="">
+				<div class="col-lg-1"></div>
+			<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 ">
+				<div class="col-lg-12 col-md-12 mdc-card out-sider-block" style="background:white;height:auto;margin-top:0;">
+					<a href="./graphs/vbag.html">
+					<canvas id="myChart" width="" height="" onclick="on()"></canvas>
+				</a>
+					
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0;">
+				</div>
+				</div>
+
+				<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-12 col-md-12 mdc-card out-sider-block" style="background:white;margin-top:0;">
+					<a href="./graphs/vbag2.html">
+					<canvas id="mychart" width="" height=""  onclick="on()"></canvas>
+					</a>
+						
+					</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0;">
+						</div>
+				</div>
+				<div class="col-lg-1"></div>
+				</div>
+		</div>
+
+	
+</div>
+</div>
+<!-- section3 -->
+
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+	<div clas="row">
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 staticcard">
+				<div class="mdc-card" style="border-radius:3px;background: #FFF;">
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="">
+
+								<a href="#" style="text-decoration: none;" id="myBtn" onclick="osbd()">
+								<div class="mdc-card scaleup col-lg-6 col-md-6 col-sm-6 col-xs-6" id="out-sider" style="background:#272d37;">
+									<div>
+										<img src="images/icon3.png" style="height:100%;width:100%;margin-top:10px;">
+									<!-- <i class="fa fa-file" aria-hidden="true" style="font-size:40px;color:white;margin-top:20px;margin-left:5px;"></i> --></div>
+									<!-- <i class="material-icons mdc-list-item__graphic" aria-hidden="true" style="font-size:48px;text-align:center;padding-top: 15px;color:white;padding-left:5px;cursor: pointer;">mail</i>
+									 -->
+
+
+								</div>
+								</a>
+								<!-- <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6 text-right text-primary" style="padding-right: 0px;padding-top:10px;">
+								<span class="vbag" style="font-size:16px;">Option Served By Device</span>
+								</div> -->
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;">
+							<span class="vbag">Option Served By Device</span>
+							</div>
+
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<hr style="width:100%;">
+								</div>
+
+							</div>
+						</div>
+			
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 staticcard"  style="">
+				<div class="mdc-card" style="border-radius:3px;background: #FFF;">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<a href="#"  onclick="vbd()">
+							<div class="mdc-card scaleup col-lg-6 col-md-6 col-sm-6 col-xs-6" id="out-sider" style="background:#ca9800	;">
+								<div>
+									<img src="images/icon3.png" style="height:100%;width:100%;margin-top:10px;">
+									<!-- <i class="fa fa-file" aria-hidden="true" style="font-size:40px;color:white;margin-top:20px;margin-left:5px;"></i> --></div>
+									<!-- <i class="material-icons mdc-list-item__graphic" aria-hidden="true" style="font-size:48px;text-align:center;padding-top: 15px;color:white;padding-left:5px;cursor: pointer;">mail</i> -->
+							</div>
+							</a>
+							<!-- <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6 text-right text-primary"  style="padding-right: 0px;padding-top:10px;">
+							<span class="vbag" style="font-size:16px;">Visitors By Device</span>
+							</div> -->
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;">
+							<span class="vbag">Visitors By Device</span>
+							</div>
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<hr style="width:100%;">
+							</div>
+
+						</div>
+					</div>
+			
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 staticcard"   style="">
+				<div class="mdc-card" style="border-radius:3px;background: #FFF;">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<a href="#" onclick="nrv()">
+							<div class="mdc-card scaleup col-lg-6 col-md-6 col-sm-6 col-xs-6" id="out-sider" style="background:#272d37;">
+								<div>
+
+									<img src="images/icon3.png" style="height:100%;width:100%;margin-top:10px;">
+									<!-- <i class="fa fa-file" aria-hidden="true" style="font-size:40px;color:white;margin-top:20px;margin-left:5px;"></i> --></div>
+									<!-- <i class="material-icons mdc-list-item__graphic" aria-hidden="true" style="font-size:48px;text-align:center;padding-top: 15px;color:white;padding-left:5px;cursor: pointer;">mail</i> -->
+
+							</div>
+							</a>
+						<!-- 	<div class="col-lg-8 col-md-6 col-sm-6 col-xs-6 text-right text-primary"  style="padding-right: 0px;padding-top:10px;">
+							<span class="vbag" style="font-size:16px;">New & Returning Visitors</span>
+							</div> -->
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;">
+							<span class="vbag">New & Returning Visitors</span>
+							</div>
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<hr style="width:100%;">
+							</div>
+
+						</div>
+					</div>
+			
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 staticcard" style="padding-right:5px;">
+				<div class="mdc-card" style="border-radius:3px;background: #FFF;">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<a href="#" onclick="dvbd()">
+							<div class="mdc-card scaleup col-lg-6 col-md-6 col-sm-6 col-xs-6" id="out-sider" style="background:#ca9800;">
+								<div>
+									<img src="images/icon3.png" style="height:100%;width:100%;margin-top:10px;">
+									<!-- <i class="fa fa-file" aria-hidden="true" style="font-size:40px;color:white;margin-top:20px;margin-left:5px;"></i> --></div>
+									<!-- <i class="material-icons mdc-list-item__graphic" aria-hidden="true" style="font-size:48px;text-align:center;padding-top: 15px;color:white;padding-left:5px;cursor: pointer;">mail</i>
+ -->
+							</div>
+							</a>
+							
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;">
+							<span class="vbag">Daily Visitors By Duration</span>
+							</div>
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<hr style="width:100%;">
+							</div>
+
+						</div>
+					</div>
+			
+				</div>
+			</div>
+		
+		</div>	
+</div>		
+	<!-- section 2 -->
+
+
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;padding-bottom:10px;">
+	<div clas="row">
+		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 staticcard" >
+			<div class="mdc-card" style="border-radius:3px;background: #FFF;">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<a href="#" onclick="dvbtod()">
+						<div class="mdc-card scaleup col-lg-6 col-md-6 col-sm-6 col-xs-6" id="out-sider" style="background:#ca9800;">
+							<div>
+								<img src="images/icon3.png" style="height:100%;width:100%;margin-top:10px;">
+									<!-- <i class="fa fa-file" aria-hidden="true" style="font-size:40px;color:white;margin-top:20px;margin-left:5px;"></i> --></div>
+								<!-- <i class="material-icons mdc-list-item__graphic" aria-hidden="true" style="font-size:48px;text-align:center;padding-top: 15px;color:white;padding-left:5px;cursor: pointer;">mail</i> -->
+						</div>
+						</a>
+						<!-- <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6 text-right text-primary"  style="padding-right: 0px;padding-top:10px;">
+						<span class="vbag" style="font-size:16px;">Daily Visitors By Time Of Day</span>
+						</div> -->
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;">
+							<span class="vbag">Daily Visitors By Time Of Day</span>
+							</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<hr style="width:100%;">
+						</div>
+
+					</div>
+				</div>
+			
+			</div>
+		</div>
+
+		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 staticcard"   style="">
+			<div class="mdc-card" style="border-radius:3px;background: #FFF;">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<a href="#" onclick="hvbd()">
+						<div class="mdc-card scaleup col-lg-6 col-md-6 col-sm-6 col-xs-6" id="out-sider" style="background:#272d37;">
+							<div>
+								<img src="images/icon3.png" style="height:100%;width:100%;margin-top:10px;"> 
+									<!-- <i class="fa fa-file" aria-hidden="true" style="font-size:40px;color:white;margin-top:20px;margin-left:5px;"></i> --></div>
+								<!-- <i class="material-icons mdc-list-item__graphic" aria-hidden="true" style="font-size:48px;text-align:center;padding-top: 15px;color:white;padding-left:5px;cursor: pointer;">equalizer</i> -->
+						</div>
+						</a>
+						<!-- <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6 text-right text-primary"  style="padding-right: 0px;padding-top:10px;">
+						<span class="vbag" style="font-size:16px;">Hourly Visitors By Duration</span>
+						</div> -->
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;">
+							<span class="vbag">Hourly Visitors By Duration</span>
+							</div>
+
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<hr style="width:100%;">
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 staticcard">
+			<div class="mdc-card" style="border-radius:3px;background: #FFF;">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<a href="#" onclick="dwv()">
+						<div class="mdc-card scaleup col-lg-6 col-md-6 col-sm-6 col-xs-6" id="out-sider" style="background:#ca9800;">
+							<div>
+								<img src="images/line.png" style="height:100%;width:100%;margin-top:10px;">
+									<!-- <i class="fa fa-line-chart" aria-hidden="true" style="font-size:40px;color:white;margin-top:20px;margin-left:0px;"></i> --></div>
+							<!-- 	<i class="material-icons mdc-list-item__graphic" aria-hidden="true" style="font-size:48px;text-align:center;padding-top: 15px;color:white;padding-left:5px;cursor: pointer;">equalizer</i> -->
+
+						</div>
+						</a>
+						<!-- <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6 text-right text-primary"  style="padding-right: 0px;padding-top:10px;"> 
+						<span class="vbag" style="font-size:16px;">Day Wise Visitors</span>
+						</div> -->
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;">
+							<span class="vbag">Day Wise Visitors</span>
+							</div>
+
+
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<hr style="width:100%;">
+						</div>
+
+					</div>
+				</div>
+			
+			</div>
+		</div>
+
+		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 staticcard"  style="padding-right:5px;">
+			<div class="mdc-card" style="border-radius:3px;background: #FFF;">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<a href="#" onclick="vbg()">
+						<div class="mdc-card scaleup col-lg-6 col-md-6 col-sm-6 col-xs-6" id="out-sider" style="background:#272d37;">
+
+							<div>
+								<img src="images/pie.png" style="height:100%;width:100%;padding-top:15px;">
+									<!-- <i class="fa fa-pie-chart" aria-hidden="true" style="font-size:40px;color:white;margin-top:20px;margin-left:5px;"></i> --></div>
+							<!-- <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button> -->
+								<!-- <i class="material-icons mdc-list-item__graphic" aria-hidden="true" style="font-size:48px;text-align:center;padding-top: 15px;color:white;padding-left:5px;cursor: pointer;">equalizer</i> -->
+
+						</div>
+						</a>
+						<!-- <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6 text-right text-primary"  style="padding-right: 0px;padding-top:10px;">
+						<span class="vbag" style="font-size:16px;"> Visitors By Gender</span>
+						</div> -->
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;">
+							<span class="vbag">Visitors By Gender</span>
+							</div>
+
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<hr style="width:100%;">
+						</div>
+
+					</div>
+				</div>
+			
+			</div>
+		</div>
+
+
+	</div>
+</div>	
+
+
+<!-- section -->
+
+
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 staticcard"  style="padding-right:5px;">
+			<div class="mdc-card" style="border-radius:3px;background: #FFF;">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<a href="#" onclick="vbag()">
+						<div class="mdc-card scaleup col-lg-6 col-md-6 col-sm-6 col-xs-6" id="out-sider" style="background:#272d37;">
+
+							<div>
+								<img src="images/bar.png" style="height:100%;width:100%;margin-top:10px;">
+									<!-- <i class="fa fa-bar-chart" aria-hidden="true" style="font-size:40px;color:white;margin-top:20px;margin-left:0px;"></i> --></div>
+							<!-- <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button> -->
+								<!-- <i class="material-icons mdc-list-item__graphic" aria-hidden="true" style="font-size:48px;text-align:center;padding-top: 15px;color:white;padding-left:5px;cursor: pointer;">equalizer</i> -->
+
+						</div>
+						</a>
+						<!-- <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6 text-right text-primary"  style="padding-right: 0px;padding-top:10px;">
+						<span class="vbag" style="font-size:16px;"> Visitors By Gender</span>
+						</div> -->
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;">
+							<span class="vbag">Visitors By Age Group</span>
+							</div>
+
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<hr style="width:100%;">
+						</div>
+
+					</div>
+				</div>
+			
+			</div>
+		</div>
+
+<footer>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:20px;">
+		<div class="row">
+			<section class="col-md-12 col-sm-12 col-xs-12 text-center">
+						<a href="#" style="text-decoration: none;">
+						<button class="mdc-button mdc-ripple-surface" style="border-radius: 5px;color:#FFF;background:#007bb5;">
+							<i class="fa fa-linkedin" aria-hidden="true" style="font-size:20px;"></i>
+						</button>
+						</a>
+					
+
+						<a href="#" style="text-decoration: none;">
+						<button class="mdc-button mdc-ripple-surface" style="border-radius: 5px;color:#FFF;background: #3b5998;">
+							<i class="fa fa-facebook" aria-hidden="true" style="font-size:20px;"></i>
+
+						</button>
+						</a>
+					<a href="#" style="text-decoration: none;">
+					<button class="mdc-button mdc-ripple-surface" style="border-radius: 5px;color:#FFF;background:#336699;">
+					<i class="fa fa-instagram" aria-hidden="true" style="font-size:20px;"></i>
+					</button>
+					</a>
+					
+				</section>
+
+				<div class="row">
+				<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+			<h4 class="text-center">Copyright &copy; TBM Technologies Pvt Ltd, India. All rights reserved</h4>			</section>
+			</div>
+
+		</div>
+	
+	</div>
+
+ </footer>
+
+
+</div>
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script> 
+<script type="text/javascript" src="js/jquary-script.js"></script>
+<script type="text/javascript" src="js/bar.js"></script>
+
+<script type="text/javascript" src="js/pie.js"></script>
+
+<script type="text/javascript">
+	
+</script>
+<script type="text/javascript">
+
+// 	var e=1;
+// var colorg2;
+// if(e=1){
+// colorg5='#B22222';
+// }else{
+// 	colorg5='#008000';
+// }
+
+var colorg;
+var intnumtdy = parseInt(prompt("Today's Value"));
+var intnum2ystdy = parseInt(prompt("Yesterday's Value"));
+var intnum3;
+if (intnumtdy < intnum2ystdy){
+  document.getElementById('conditionals').style.display = "block";
+  // document.getElementById('decreases').style.color = "#B22222";
+  dumbdata = (((intnumtdy - intnum2ystdy) / intnumtdy) * 100);
+  // alert(dumbdata);
+  // intnum3 = (intnum2ystdy-intnumtdy);
+    document.getElementById('decreases').innerHTML = Math.abs(dumbdata.toFixed(2));
+  document.getElementById('valuesoftdy').innerHTML = Math.abs(intnumtdy);
+  colorg = "#B22222";
+  
+} 
+else if(intnumtdy > intnum2ystdy){
+  document.getElementById('conditionals1').style.display = "block";
+  // document.getElementById('growths').style.color = "#0ca020";
+  dumbdata = ((intnumtdy - intnum2ystdy) / intnumtdy * 100);
+  
+
+  document.getElementById('growths').innerHTML = Math.abs(dumbdata.toFixed(2));
+  // intnum3 = (intnumtdy-intnum2ystdy);
+
+  document.getElementById('valuesoftdy').innerHTML = Math.abs(intnumtdy);
+  colorg = "#0ca020";
+  
+}
+		
+var indicatorContainer = radialIndicator('#indicatorContainer', {
+							radius: 52,
+							barWidth: 5,
+							barColor: {
+							0: colorg,
+							12: colorg,
+							24: colorg,
+							60: colorg,
+							100: colorg,
+
+			 },
+							minValue: 0,
+							initValue:dumbdata,
+							maxValue: 100,
+							displayNumber:false,
+							fontWeight: 'normal',
+							roundCorner: true,
+  });
+
+
+
+
+
+
+
+var colorg1;
+var intnumtdy1 = parseInt(prompt("Today's Value"));
+var intnum2ystdy1 = parseInt(prompt("Yesterday's Value"));
+var intnum1;
+if (intnumtdy1 < intnum2ystdy1){
+  document.getElementById('conditionals2').style.display = "block";
+  document.getElementById('decreases').style.color = "#B22222";
+	intnum1 = Math.round(intnumtdy1 / intnum2ystdy1).toFixed(2);
+	document.getElementById('valuesoftdyvystrdy').innerHTML = intnum1 + '%';
+  colorg1 = "#B22222";
+  
+} 
+else{
+  document.getElementById('conditionals3').style.display = "block";
+  document.getElementById('growths').style.color = "#0ca020";
+  intnum1 =  Math.round(intnumtdy1 / intnum2ystdy1).toFixed(2);
+  document.getElementById('valuesoftdyvystrdy').innerHTML = intnum1 + "%";
+  colorg1 = "#0ca020";
+}
+var indicator = radialIndicator('#indicator', {
+		radius: 52,
+		barWidth: 5,
+		barColor: {
+			 0: colorg1,
+			 12: colorg1,
+			 24: colorg1,
+			 60: colorg1,
+			 100: colorg1,
+			 
+			 
+
+				 
+		},
+		minValue: 0,
+		maxValue:100,
+		initValue:intnum1,
+		displayNumber:false,
+		fontWeight: 'normal',
+		roundCorner: true,
+  });
+
+
+
+
+
+			
+
+
+	
+var colorg2;
+var todays ='00hrs51min';
+var yesterday = '10hrs59min';
+
+
+
+
+
+
+// Convert Hours into minutes
+var todayshour = todays.slice(0,2);
+var todaysminutes = todays.slice(5,7);
+var todayshtm =  todayshour * 60;
+var todaystotal = parseInt(todayshtm) + parseInt(todaysminutes);
+alert('value one '+todaystotal + ' min');
+
+
+
+// second
+var yesterdayhour = yesterday.slice(0,2);
+var yesterdayminutes = yesterday.slice(5,7);
+var yesterdayhtm =  yesterdayhour * 60;
+var yesterdaytotal = parseInt(yesterdayhtm) + parseInt(yesterdayminutes);
+alert('value second '+yesterdaytotal + ' min');
+
+
+
+
+
+if(todaystotal < yesterdaytotal){
+
+
+
+					document.getElementById('conditionals4').style.display = "block";
+					document.getElementById('decreases').style.color = "#B22222";
+					percentagecalculation = Math.abs(((todaystotal - yesterdaytotal) / yesterdaytotal) * 100).toFixed(2);
+				alert(percentagecalculation);
+					document.querySelector('.atsval2').innerHTML = percentagecalculation + '%';
+
+					document.getElementById('atsvalue').innerHTML =   todays;
+					colorg2 = "#B22222";
+
+}
+else if(todaystotal > yesterdaytotal){
+
+					document.getElementById('conditionals5').style.display = "block";
+					document.getElementById('growths').style.color = "#0ca020";
+					percentagecalculation = Math.abs(((todaystotal - yesterdaytotal) / yesterdaytotal) * 100).toFixed(2);
+					alert(percentagecalculation);
+					document.querySelector('.atsval1').innerHTML = (percentagecalculation) + '%';
+					document.getElementById('atsvalue').innerHTML = todays;
+					colorg2 = "#0ca020";
+}
+else{
+
+
+					document.getElementById('conditionals5').style.display = "block";
+					document.getElementById('growths').style.color = "#0ca020";
+					percentagecalculation = Math.abs(((todaystotal - yesterdaytotal) / yesterdaytotal) * 100).toFixed(2);
+					alert(percentagecalculation);
+					document.querySelector('.atsval1').innerHTML = (percentagecalculation) + '%';
+					document.getElementById('atsvalue').innerHTML =  todays ;
+					colorg2 = "#0ca020";
+
+}
+
+
+		var ats = radialIndicator('#ats', {
+	    radius: 52,
+	    barWidth: 5,
+	    barColor: {
+	       	0: colorg2,
+	        10: colorg2,
+	        30:colorg2,
+	        60:colorg2,
+	        100:colorg2,
+	        
+			  
+			  
+
+				  
+	    },
+	    minValue: 0,
+	    initValue:percentagecalculation,
+	    maxValue: 100,
+	    displayNumber:false,
+	    fontWeight: 'normal',
+	    roundCorner: true,
+	});
+	 
+
+
+
+
+
+
+	// 		var nvt = radialIndicator('#nvt', {
+	//     radius: 52,
+	//     barWidth: 5,
+	//     barColor: {
+	//        	0: colorg2,
+	//         12: colorg2,
+	//         24: colorg2,
+	//         60: colorg2,
+			  
+			  
+
+				  
+	//     },
+	//     minValue: 0,
+	//     maxValue: 60,
+	//     displayNumber:false,
+	//     fontWeight: 'normal',
+	//     roundCorner: true,
+	// });
+	
+
+
+
+
+
+// var rvt = radialIndicator('#rvt', {
+// 	    radius: 52,
+// 	    barWidth: 5,
+// 	    barColor: {
+// 	       	0: colorg,
+// 	        12: colorg,
+// 	        24: colorg,
+// 	        60: colorg,
+// 	    	    },
+// 	    minValue: 0,
+//       initValue:intnum3,
+// 	    maxValue:100,
+// 	    displayNumber:false,
+// 	    fontWeight: 'normal',
+// 	    roundCorner: true,
+// 	});
+	 
+
+
+
+
+
+</script>
+
+</body>
+</html>
